@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>OMR Branch</td>
+      <td>20 May 2024, 14:02</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC1_LoginStep.user_is_on_the_omr_branch_page()</td>
+              <td>27</td>
+              <td class="duration" data-value="8563109603">8.563</td>
+              <td class="duration" data-value="8563109603">27.536</td>
+              <td class="duration" data-value="231203959300">3:51.203</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC1_LoginStep.user_login_and(java.lang.String,java.lang.String)</td>
+              <td>26</td>
+              <td class="duration" data-value="672240380">0.672</td>
+              <td class="duration" data-value="672240380">1.005</td>
+              <td class="duration" data-value="17478249900">17.478</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC1_LoginStep.user_login_and_using_enter_key(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="463702300">0.463</td>
+              <td class="duration" data-value="463702300">0.463</td>
+              <td class="duration" data-value="463702300">0.463</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC1_LoginStep.user_should_verify_the_after_login_error_message_as(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1161496500">1.161</td>
+              <td class="duration" data-value="1161496500">1.161</td>
+              <td class="duration" data-value="1161496500">1.161</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC1_LoginStep.user_should_verify_the_after_login_success_message_as(java.lang.String)</td>
+              <td>26</td>
+              <td class="duration" data-value="8581436257">8.581</td>
+              <td class="duration" data-value="8581436257">15.309</td>
+              <td class="duration" data-value="223117342700">3:43.117</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_click_search_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="9381357600">9.381</td>
+              <td class="duration" data-value="9381357600">9.381</td>
+              <td class="duration" data-value="9381357600">9.381</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_click_sorting_functionality_name_ascending()</td>
+              <td>1</td>
+              <td class="duration" data-value="175152300">0.175</td>
+              <td class="duration" data-value="175152300">0.175</td>
+              <td class="duration" data-value="175152300">0.175</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_click_sorting_functionality_name_descending()</td>
+              <td>1</td>
+              <td class="duration" data-value="171785500">0.171</td>
+              <td class="duration" data-value="171785500">0.171</td>
+              <td class="duration" data-value="171785500">0.171</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_click_sorting_functionality_price_high_to_low()</td>
+              <td>1</td>
+              <td class="duration" data-value="159046900">0.159</td>
+              <td class="duration" data-value="159046900">0.159</td>
+              <td class="duration" data-value="159046900">0.159</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_click_sorting_functionality_price_low_to_high()</td>
+              <td>1</td>
+              <td class="duration" data-value="122742300">0.122</td>
+              <td class="duration" data-value="122742300">0.122</td>
+              <td class="duration" data-value="122742300">0.122</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_search_hotels_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>18</td>
+              <td class="duration" data-value="23633429972">23.633</td>
+              <td class="duration" data-value="23633429972">1:12.868</td>
+              <td class="duration" data-value="425401739500">7:5.401</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_search_hotels_and_in_the_fields_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="14527672800">14.527</td>
+              <td class="duration" data-value="14527672800">14.527</td>
+              <td class="duration" data-value="14527672800">14.527</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_should_verify_after_search_hotel_error_message_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="565779300">0.565</td>
+              <td class="duration" data-value="565779300">0.565</td>
+              <td class="duration" data-value="565779300">0.565</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_should_verify_after_search_hotel_success_message(java.lang.String)</td>
+              <td>19</td>
+              <td class="duration" data-value="7384578115">7.384</td>
+              <td class="duration" data-value="7384578115">12.639</td>
+              <td class="duration" data-value="140306984200">2:20.306</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_should_verify_all_hotel_listed_in_the_selected_roomtype(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="150714200">0.150</td>
+              <td class="duration" data-value="150714200">0.150</td>
+              <td class="duration" data-value="150714200">0.150</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_should_verify_all_listed_hotel_roomtype_displayed_in_header(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="963086600">0.963</td>
+              <td class="duration" data-value="963086600">0.963</td>
+              <td class="duration" data-value="963086600">0.963</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_should_verify_the_displayed_hotel_names_are_in_ascending()</td>
+              <td>1</td>
+              <td class="duration" data-value="42797000">0.042</td>
+              <td class="duration" data-value="42797000">0.042</td>
+              <td class="duration" data-value="42797000">0.042</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_should_verify_the_displayed_hotel_names_are_in_descending()</td>
+              <td>1</td>
+              <td class="duration" data-value="44833000">0.044</td>
+              <td class="duration" data-value="44833000">0.044</td>
+              <td class="duration" data-value="44833000">0.044</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_should_verify_the_displayed_hotel_names_are_in_price_high_to_low()</td>
+              <td>1</td>
+              <td class="duration" data-value="51375100">0.051</td>
+              <td class="duration" data-value="51375100">0.051</td>
+              <td class="duration" data-value="51375100">0.051</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC2_SearchHotelStep.user_should_verify_the_displayed_hotel_names_are_in_price_low_to_high()</td>
+              <td>1</td>
+              <td class="duration" data-value="34191600">0.034</td>
+              <td class="duration" data-value="34191600">0.034</td>
+              <td class="duration" data-value="34191600">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC3_SelectHotelStep.user_click_cancel_the_alert()</td>
+              <td>1</td>
+              <td class="duration" data-value="8404000">0.008</td>
+              <td class="duration" data-value="8404000">0.008</td>
+              <td class="duration" data-value="8404000">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC3_SelectHotelStep.user_click_ok_the_alert()</td>
+              <td>10</td>
+              <td class="duration" data-value="13198180">0.013</td>
+              <td class="duration" data-value="13198180">0.044</td>
+              <td class="duration" data-value="131981800">0.131</td>
+              <td class="failed">90.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC3_SelectHotelStep.user_click_the_first_hotel()</td>
+              <td>11</td>
+              <td class="duration" data-value="277988845">0.277</td>
+              <td class="duration" data-value="277988845">0.418</td>
+              <td class="duration" data-value="3057877300">3.057</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC3_SelectHotelStep.user_save_the_first_hotel_name_and_price()</td>
+              <td>10</td>
+              <td class="duration" data-value="267777360">0.267</td>
+              <td class="duration" data-value="267777360">0.366</td>
+              <td class="duration" data-value="2677773600">2.677</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC3_SelectHotelStep.user_should_verify_after_same_search_hotel_success_message(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="174178400">0.174</td>
+              <td class="duration" data-value="174178400">0.174</td>
+              <td class="duration" data-value="174178400">0.174</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC3_SelectHotelStep.user_should_verify_after_select_hotel_success_message(java.lang.String)</td>
+              <td>10</td>
+              <td class="duration" data-value="2373234140">2.373</td>
+              <td class="duration" data-value="2373234140">3.427</td>
+              <td class="duration" data-value="23732341400">23.732</td>
+              <td class="failed">90.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_add_the_gst_details_and(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="1248060257">1.248</td>
+              <td class="duration" data-value="1248060257">1.539</td>
+              <td class="duration" data-value="8736421800">8.736</td>
+              <td class="failed">85.71%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_add_the_guest_details_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>9</td>
+              <td class="duration" data-value="1534387444">1.534</td>
+              <td class="duration" data-value="1534387444">2.072</td>
+              <td class="duration" data-value="13809487000">13.809</td>
+              <td class="failed">88.89%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_add_the_special_request(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="2698672000">2.698</td>
+              <td class="duration" data-value="2698672000">13.317</td>
+              <td class="duration" data-value="16192032000">16.192</td>
+              <td class="failed">66.67%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_add_the_without_gst_details()</td>
+              <td>2</td>
+              <td class="duration" data-value="259496700">0.259</td>
+              <td class="duration" data-value="259496700">0.316</td>
+              <td class="duration" data-value="518993400">0.518</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_add_the_without_special_request()</td>
+              <td>3</td>
+              <td class="duration" data-value="221787600">0.221</td>
+              <td class="duration" data-value="221787600">0.242</td>
+              <td class="duration" data-value="665362800">0.665</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_enter_the_payment_details_procced_with_cardtype(java.lang.String,io.cucumber.datatable.DataTable)</td>
+              <td>8</td>
+              <td class="duration" data-value="4568754325">4.568</td>
+              <td class="duration" data-value="4568754325">5.905</td>
+              <td class="duration" data-value="36550034600">36.550</td>
+              <td class="failed">87.50%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_should_verify_after_hotel_booking_success_message_and_save_order_id(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="130514325">0.130</td>
+              <td class="duration" data-value="130514325">0.179</td>
+              <td class="duration" data-value="1044114600">1.044</td>
+              <td class="failed">87.50%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_should_verify_after_payment_details_error_message_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_should_verify_same_selected_hotel_is_booked_or_not()</td>
+              <td>8</td>
+              <td class="duration" data-value="114903912">0.114</td>
+              <td class="duration" data-value="114903912">0.157</td>
+              <td class="duration" data-value="919231300">0.919</td>
+              <td class="failed">87.50%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC4_BookHotelStep.user_without_entering_any_field_click_submit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_modify_the_check_in_date(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="9426618666">9.426</td>
+              <td class="duration" data-value="9426618666">10.096</td>
+              <td class="duration" data-value="28279856000">28.279</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_modify_the_firstdisplayed_order_id(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="14280880600">14.280</td>
+              <td class="duration" data-value="14280880600">14.280</td>
+              <td class="duration" data-value="14280880600">14.280</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_navigate_into_the_my_booking_page()</td>
+              <td>6</td>
+              <td class="duration" data-value="5013077933">5.013</td>
+              <td class="duration" data-value="5013077933">8.778</td>
+              <td class="duration" data-value="30078467600">30.078</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_search_the_order_id()</td>
+              <td>4</td>
+              <td class="duration" data-value="534800125">0.534</td>
+              <td class="duration" data-value="534800125">0.614</td>
+              <td class="duration" data-value="2139200500">2.139</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_search_the_order_id(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="381498400">0.381</td>
+              <td class="duration" data-value="381498400">0.381</td>
+              <td class="duration" data-value="381498400">0.381</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_should_verify_after_modify_check_in_date_success_message(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="153768650">0.153</td>
+              <td class="duration" data-value="153768650">0.203</td>
+              <td class="duration" data-value="615074600">0.615</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_should_verify_the_after_navigating_my_booking_success_message(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="153423250">0.153</td>
+              <td class="duration" data-value="153423250">0.170</td>
+              <td class="duration" data-value="920539500">0.920</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_should_verify_the_hotel_price()</td>
+              <td>3</td>
+              <td class="duration" data-value="259622733">0.259</td>
+              <td class="duration" data-value="259622733">0.261</td>
+              <td class="duration" data-value="778868200">0.778</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_should_verify_the_order_id()</td>
+              <td>3</td>
+              <td class="duration" data-value="134141166">0.134</td>
+              <td class="duration" data-value="134141166">0.143</td>
+              <td class="duration" data-value="402423500">0.402</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC5_ChangeBookingStep.user_should_verify_the_same_booked_hotelname_is_present_or_not()</td>
+              <td>5</td>
+              <td class="duration" data-value="286324020">0.286</td>
+              <td class="duration" data-value="286324020">0.341</td>
+              <td class="duration" data-value="1431620100">1.431</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC6_CancelBookingStep.user_cancel_the_existing_order_id(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="366538000">0.366</td>
+              <td class="duration" data-value="366538000">0.366</td>
+              <td class="duration" data-value="366538000">0.366</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC6_CancelBookingStep.user_cancel_the_first_displayed_order_id()</td>
+              <td>1</td>
+              <td class="duration" data-value="284602100">0.284</td>
+              <td class="duration" data-value="284602100">0.284</td>
+              <td class="duration" data-value="284602100">0.284</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC6_CancelBookingStep.user_cancel_the_new_order_id()</td>
+              <td>1</td>
+              <td class="duration" data-value="291302700">0.291</td>
+              <td class="duration" data-value="291302700">0.291</td>
+              <td class="duration" data-value="291302700">0.291</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.StepDefinition.TC6_CancelBookingStep.user_should_verify_the_after_cancel_success_message(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="4220272033">4.220</td>
+              <td class="duration" data-value="4220272033">5.587</td>
+              <td class="duration" data-value="12660816100">12.660</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>50</td>
+            <td>269</td>
+            <td class="duration">4.708</td>
+            <td class="duration">7:5.401</td>
+            <td class="duration">21:6.653</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
